@@ -11,14 +11,15 @@ IDOL_SOURCE = 'http://aidoru-bomb.herokuapp.com/random'
 
 
 @app.route('/')
+@app.route('/random')
 def home():
     r = requests.get(IDOL_SOURCE)
     gif = r.json.get('idol', '')
     return render_template('home.html', gif=gif)
 
 
-@app.route('/random')
-def random_gif():
+@app.route('/fetch')
+def fetch_gif():
     r = requests.get(IDOL_SOURCE)
     return jsonify(r.json)
 
