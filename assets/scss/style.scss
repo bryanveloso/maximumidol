@@ -6,6 +6,8 @@ body {
   position: absolute;
   width: 100%; height: 100%;
 
+  font-family: 'freight-sans-pro', sans-serif;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -15,19 +17,45 @@ header {
 
   z-index: 200;
   background: black;
-}
-h1 {
-  line-height: 1;
-  margin: 0;
-  padding: 0.5em;
 
-  a {
-    color: white;
-    font-family: 'freight-sans-pro', sans-serif;
-    font-weight: normal;
-    text-decoration: none;
+  .social {
+    @include single-transition();
+    position: absolute;
+    top: 0; right: 1em;
+    line-height: 64px;
 
+    .loading & { opacity: 0; }
+    .loaded & { opacity: 1; }
+
+    .byline {
+      font-size: 16px;
+      color: rgba(white, 0.5);
+
+      display: inline-block;
+      margin: 0 0.5em 0 0;
+
+      a {
+        color: rgba(white, 0.75);
+        text-decoration: none; }
+    }
   }
+  h1 {
+    line-height: 1;
+    margin: 0;
+    padding: 0.5em;
+
+    a {
+      color: white;
+      font-weight: normal;
+      text-decoration: none;
+    }
+  }
+}
+
+.tip {
+  color: white;
+
+  position: absolute;
 }
 
 .gif {
