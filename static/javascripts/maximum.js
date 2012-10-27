@@ -94,4 +94,8 @@
     return new MaximumIdol;
   });
 
+  $(document).on('click', 'a.what-is-this', function(e) {
+    return $('div.about').fadeToggle();
+  });
+
 }).call(this);

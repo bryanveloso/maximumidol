@@ -56,3 +56,6 @@ class MaximumIdol
 
 $(window).ready ->
     new MaximumIdol
+
+$(document).on 'click', 'a.what-is-this', (e) ->
+    $('div.about').fadeToggle()

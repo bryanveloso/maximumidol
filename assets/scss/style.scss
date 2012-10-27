@@ -52,10 +52,27 @@ header {
   }
 }
 
-.tip {
-  color: white;
+.what-is-this {
+  @include single-transition(all, 250ms);
+  background-color: rgba(white, 0.3);
+  border-radius: 20px;
 
-  position: absolute;
+  display: inline-block;
+  width: 20px; height: 20px;
+  position: relative;
+
+  &:hover {
+    background-color: rgba(white, 0.7);
+    cursor: pointer;
+  }
+  span {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+
+    position: absolute;
+    left: 7px; top: 2px;
+  }
 }
 
 .gif {
@@ -71,6 +88,36 @@ header {
 }
 .gif.fit {
   @include background-size(contain);
+}
+
+.about {
+  background-color: rgba(white, 0.98);
+  display: none;
+
+  position: absolute;
+  top: 0; right: 0; left: 0; bottom: 64px;
+  padding: 0 1em 1em 1em;
+  z-index: 1000;
+
+  section {
+    @include clearfix;
+  }
+  h1 {
+    float: left;
+    margin-top: 14px;
+    width: 20%;
+  }
+  p, ul {
+    color: rgba(black, 0.7);
+    font-size: 18px;
+    margin-left: 20%;
+    padding-left: 0;
+    width: 60%;
+  }
+  a {
+    color: #f05523;
+    text-decoration: none;
+  }
 }
 
 .fb_edge_widget_with_comment span.fb_edge_comment_widget {
