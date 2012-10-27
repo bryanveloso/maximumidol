@@ -1,7 +1,7 @@
 import os
 import requests
 
-from flask import Flask, request, render_template
+from flask import Flask, jsonify, request, render_template
 
 app = Flask(__name__)
 app.debug = True
@@ -20,7 +20,7 @@ def home():
 @app.route('/random')
 def random_gif():
     r = requests.get(IDOL_SOURCE)
-    return r.json
+    return jsonify(r.json)
 
 
 if __name__ == '__main__':
