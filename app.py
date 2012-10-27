@@ -3,7 +3,10 @@ import requests
 
 from flask import Flask, request, render_template
 
+app = Flask(__name__)
+app.debug = False
 
+# Hard-coded source of IDOLS.
 IDOL_SOURCE = 'http://aidoru-bomb.herokuapp.com/random'
 
 
