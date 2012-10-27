@@ -4,7 +4,7 @@ import requests
 from flask import Flask, jsonify, request, render_template
 
 app = Flask(__name__)
-app.debug = True
+app.debug = False
 
 # Hard-coded source of IDOLS.
 IDOL_SOURCE = 'http://aidoru-bomb.herokuapp.com/random'
