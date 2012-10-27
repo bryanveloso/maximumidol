@@ -9,6 +9,27 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+header {
+  position: absolute;
+  right: 0; bottom: 0; left: 0;
+
+  z-index: 200;
+  background: black;
+}
+h1 {
+  line-height: 1;
+  margin: 0;
+  padding: 0.5em;
+
+  a {
+    color: white;
+    font-family: 'freight-sans-pro', sans-serif;
+    font-weight: normal;
+    text-decoration: none;
+
+  }
+}
+
 .gif {
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
