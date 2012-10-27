@@ -50,6 +50,7 @@ class MaximumIdol
         oldGif.fadeOut 150, ->
             oldGif.detach()
             newGif.removeClass 'new-gif'
+        _gauges.push(['track']);
 
 
 $(window).ready ->
