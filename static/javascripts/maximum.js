@@ -38,9 +38,7 @@
           _this.stack.push({
             url: data.idol
           });
-          _this.preload(data.idol);
-          console.log('adding ' + data.idol);
-          return console.log(_this.stack);
+          return _this.preload(data.idol);
         }));
       }
       return _results;
@@ -48,7 +46,6 @@
 
     MaximumIdol.prototype.navigate = function() {
       var _this = this;
-      console.log('navigated!');
       return $('body').on('click', 'a.gif', function(e) {
         _this.randomize();
         return e.preventDefault();
@@ -57,7 +54,6 @@
 
     MaximumIdol.prototype.randomize = function() {
       var _this = this;
-      console.log('randomized!');
       if (this.stack.length > 0) {
         this.update(this.stack[0].url);
         this.stack.splice(0, 1);

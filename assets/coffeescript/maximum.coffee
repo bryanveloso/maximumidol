@@ -20,17 +20,13 @@ class MaximumIdol
             $.getJSON '/fetch?' + i, (data) =>
                 @stack.push({url: data.idol})
                 @preload(data.idol)
-                console.log('adding ' + data.idol)
-                console.log(@stack)
 
     navigate: ->
-        console.log 'navigated!'
         $('body').on 'click', 'a.gif', (e) =>
             @randomize()
             e.preventDefault()
 
     randomize: =>
-        console.log 'randomized!'
         if @stack.length > 0
             @update(@stack[0].url)
             @stack.splice(0,1)
