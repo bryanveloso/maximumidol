@@ -4,7 +4,7 @@ import requests
 from flask import Flask, request, render_template
 
 app = Flask(__name__)
-app.debug = False
+app.debug = True
 
 # Hard-coded source of IDOLS.
 IDOL_SOURCE = 'http://aidoru-bomb.herokuapp.com/random'
@@ -14,7 +14,7 @@ IDOL_SOURCE = 'http://aidoru-bomb.herokuapp.com/random'
 def home():
     r = requests.get(IDOL_SOURCE)
     gif = r.json.get('idol', '')
-    return render_template('', gif=gif)
+    return render_template('home.html', gif=gif)
 
 
 @app.route('/random')
