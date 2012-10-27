@@ -72,3 +72,7 @@ header {
 .gif.fit {
   @include background-size(contain);
 }
+
+.fb_edge_widget_with_comment span.fb_edge_comment_widget {
+  display: none;
+}
