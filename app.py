@@ -18,6 +18,11 @@ def home():
     return render_template('home.html', gif=gif)
 
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
 @app.route('/fetch')
 def fetch_gif():
     r = requests.get(IDOL_SOURCE)

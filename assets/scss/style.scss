@@ -91,13 +91,16 @@ header {
 }
 
 .about {
+  @include single-transition();
   background-color: rgba(white, 0.98);
-  display: none;
 
   position: absolute;
   top: 0; right: 0; left: 0; bottom: 64px;
   padding: 0 1em 1em 1em;
+  opacity: 1;
   z-index: 1000;
+
+  .wf-loading & { opacity: 0; }
 
   section {
     @include clearfix;
