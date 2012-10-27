@@ -51,8 +51,8 @@ class MaximumIdol
             oldGif.detach()
             newGif.removeClass 'new-gif'
         _gauges.push(['track']);
+        _gaq.push(['_trackPageview', '/']);
 
 
 $(window).ready ->
     new MaximumIdol
-    # MAXIMUM.init()
