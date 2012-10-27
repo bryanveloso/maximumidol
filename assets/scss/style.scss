@@ -93,11 +93,7 @@ header {
 .about {
   @include single-transition();
   background-color: rgba(white, 0.98);
-
-  position: absolute;
-  top: 0; right: 0; left: 0; bottom: 64px;
   padding: 0 1em 1em 1em;
-  z-index: 1000;
 
   .loading & { opacity: 0; }
   .loaded & { opacity: 1; }
