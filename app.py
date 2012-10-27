@@ -1,7 +1,7 @@
 import os
 import requests
 
-from flash import Flask, request, render_template
+from flask import Flask, request, render_template
 
 
 IDOL_SOURCE = 'http://aidoru-bomb.herokuapp.com/random'
