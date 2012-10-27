@@ -1,2 +1,17 @@
 @import "normalize";
 @import "compass";
+
+.gif {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+
+  background: black no-repeat center center fixed;
+  @include background-size(cover);
+  cursor: pointer !important;
+  text-indent: -9999em;
+  cursor: pointer !important;
+  z-index: 100;
+}
+.gif.fit {
+  @include background-size(contain);
+}
