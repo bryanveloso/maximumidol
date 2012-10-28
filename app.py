@@ -1,13 +1,20 @@
 import os
 import requests
 
-from flask import Flask, jsonify, request, render_template
-
-app = Flask(__name__)
-app.debug = False
+from flask import Flask, jsonify, render_template
+from flask_s3 import FlaskS3
 
 # Hard-coded source of IDOLS.
 IDOL_SOURCE = 'http://aidoru-bomb.herokuapp.com/random'
+
+# Let's create a Flask.
+app = Flask(__name__)
+app.debug = getattr(os.environ, 'DEBUG', False)
+
+# FlaskS3 Configuration
+app.config['S3_BUCKET_NAME'] = 'maximumidol'
+app.config['S3_USE_HTTPS'] = 'false'
+s3 = FlaskS3(app)
 
 
 @app.route('/')
