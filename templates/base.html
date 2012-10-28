@@ -13,8 +13,8 @@
         <meta content="http://maximumidol.com/" property="og:url">
         <meta content="http://maximumidol.com/static/images/facebook-like.png" property="og:image">
 
-        <link rel="shortcut icon" href="/static/images/favicon.png">
-        <link rel="stylesheet" href="/static/stylesheets/style.css">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}">
         <script src="//use.typekit.net/gtu1wek.js"></script>
         <script>try{Typekit.load();}catch(e){}</script>
     </head>
@@ -40,7 +40,7 @@
 
         <!-- Javascripts -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <script src="/static/javascripts/maximum.js"></script>
+        <script src="{{ url_for('static', filename='javascripts/maximum.js') }}"></script>
         <script>
             var _gauges = _gauges || [];
             (function() {
