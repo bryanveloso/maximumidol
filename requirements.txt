@@ -1,5 +1,5 @@
-Flask == 0.9
-Flask-S3 == 0.1.1
-gunicorn == 0.15.0
-newrelic == 1.6.0.13
-requests == 0.14.1
+Flask == 0.10.1
+Flask-S3 == 0.1.6
+newrelic == 2.8.0.7
+requests == 2.1.0
+waitress == 0.8.8
