@@ -3,6 +3,10 @@ import requests
 
 from flask import Flask, jsonify, render_template
 from flask_s3 import FlaskS3
+from waitress import serve
+
+# Hard to PORT.
+PORT = int(os.environ.get('PORT', 5000))
 
 # Hard-coded source of IDOLS.
 IDOL_SOURCE = 'http://aidoru-bomb.herokuapp.com/random'
@@ -20,8 +24,8 @@ s3 = FlaskS3(app)
 @app.route('/')
 @app.route('/random')
 def home():
-    r = requests.get(IDOL_SOURCE)
-    gif = r.json.get('idol', '')
+    r = requests.get(IDOL_SOURCE).json()
+    gif = r.get('idol', '')
     return render_template('home.html', gif=gif)
 
 
@@ -33,10 +37,8 @@ def about():
 @app.route('/fetch')
 def fetch_gif():
     r = requests.get(IDOL_SOURCE)
-    return jsonify(r.json)
+    return jsonify(r.json())
 
 
 if __name__ == '__main__':
-    # Bind to PORT if defined, otherwise default to 5000.
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    serve(app, port=PORT)
